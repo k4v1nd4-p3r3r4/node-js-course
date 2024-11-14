@@ -1,8 +1,13 @@
 // import os pakage
-const os = require('os')
+// const os = require('os')
 // import path pakage
-const path = require('path')
+// const path = require('path')
 
+import os from 'os';
+import path from 'path';
+import { fileURLToPath } from 'url';
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
 //console out os platform
 console.log(os.platform());
@@ -17,5 +22,7 @@ console.log(__filename);
 console.log(path.basename(__filename));
 //console out file extention 
 console.log(path.extname(__filename));
+
+console.log(path.parse(__filename));
 
 
