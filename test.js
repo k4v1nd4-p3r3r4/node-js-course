@@ -1,3 +1,3 @@
-import {math} from './myFunction.js';
+import {math as kavi} from './myFunction.js';
 
-console.log(math(3,5));
+console.log(kavi(3,5));
