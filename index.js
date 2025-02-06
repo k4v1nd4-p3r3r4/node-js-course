@@ -1,28 +1,20 @@
-// import os pakage
+// import os package
 // const os = require('os')
-// import path pakage
+// import path package
 // const path = require('path')
 
-import os from 'os';
-import path from 'path';
+import { join, dirname } from 'node:path';
 import { fileURLToPath } from 'url';
+import { readFile } from 'node:fs';
+
 const __filename = fileURLToPath(import.meta.url);
-const __dirname = path.dirname(__filename);
+const __dirname = dirname(__filename);
 
-//console out os platform
-console.log(os.platform());
-//console out os version
-console.log(os.version());
-
-// find out where is your project file path
-console.log(__dirname);
-//and with file name
-console.log(__filename);
-// console out only file name
-console.log(path.basename(__filename));
-//console out file extention 
-console.log(path.extname(__filename));
-
-console.log(path.parse(__filename));
-
+readFile(join(__dirname, 'myName.txt'), (err, data) => {
+    if (err) {
+        console.log(err);
+    } else {
+        console.log(data.toString());
+    }
+});
 
